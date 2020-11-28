@@ -144,7 +144,7 @@ public class MemoriaPanel extends SuperVisorJpanel {
                 / memoria.getTotal());
 
         // Conecta no banco e passa o insert como query SQL
-        try (Connection connection = DriverManager.getConnection(config.connectionUrl);
+        try (Connection connection =  new Conexao().getConnection();
                 PreparedStatement prepsInsertProduct = connection.prepareStatement(insertSql);) {
 
             // Executa o insert
@@ -158,7 +158,7 @@ public class MemoriaPanel extends SuperVisorJpanel {
     }
     
     public static void verificarLogin() {
-        try (Connection connection = DriverManager.getConnection(config.connectionUrl);
+        try (Connection connection =  new Conexao().getConnection();
                 Statement statement = connection.createStatement();) {
 
             // Cria e depois executa uma query feita por colunas, 

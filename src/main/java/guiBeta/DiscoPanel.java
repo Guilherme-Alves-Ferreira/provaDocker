@@ -1,5 +1,6 @@
 package guiBeta;
 
+import configBanco.Conexao;
 import static guiBeta.MemoriaPanel.config;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -135,7 +136,7 @@ public class DiscoPanel extends SuperVisorJpanel {
                 (double) Math.round((total - utilizando) * 100 / total));
 
         // Conecta no banco e passa o insert como query SQL
-        try (Connection connection = DriverManager.getConnection(config.connectionUrl);
+        try (Connection connection = new Conexao().getConnection();
                 PreparedStatement prepsInsertProduct = connection.prepareStatement(insertSql);) {
 
             // Executa o insert

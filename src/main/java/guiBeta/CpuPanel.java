@@ -1,5 +1,6 @@
 package guiBeta;
 
+import configBanco.Conexao;
 import static guiBeta.MemoriaPanel.config;
 import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
@@ -119,7 +120,7 @@ public class CpuPanel extends SuperVisorJpanel {
                 + "(null, '%.1f', '%%', 'Uso da CPU', null, 1, 1);", f[0]);
 
         // Conecta no banco e passa o insert como query SQL
-        try (Connection connection = DriverManager.getConnection(config.connectionUrl);
+        try (Connection connection = new Conexao().getConnection();
                 PreparedStatement prepsInsertProduct = connection.prepareStatement(insertSql);) {
 
             // Executa o insert
@@ -128,7 +129,7 @@ public class CpuPanel extends SuperVisorJpanel {
             // Confirma a execução
 //            System.out.println("Inserção feita com sucesso de cpu!\n");
 
-        } // Handle any errors that may have occurred.
+        }
         catch (Exception e) {
             e.printStackTrace();
         }
