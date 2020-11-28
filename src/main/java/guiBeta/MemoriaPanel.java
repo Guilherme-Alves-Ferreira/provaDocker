@@ -138,7 +138,7 @@ public class MemoriaPanel extends SuperVisorJpanel {
     public static void inserirDadosMemFisica(GlobalMemory memoria, DefaultPieDataset physMemData) {
 
         // Coloca o insert em uma String
-        String insertSql = String.format("INSERT INTO Registro VALUES "
+        String insertSql = String.format("INSERT INTO Registros VALUES "
                 + "(null, '%.1f', '%%', 'Espaço disponível', null, 1, 4)",
                 (double) (physMemData.getValue(disponivel)) * 100
                 / memoria.getTotal());

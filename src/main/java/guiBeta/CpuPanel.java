@@ -116,7 +116,7 @@ public class CpuPanel extends SuperVisorJpanel {
     public static void inserirDadosCpu(float[] f) {
 
         // Coloca o insert em uma String
-        String insertSql = String.format("INSERT INTO Registro VALUES "
+        String insertSql = String.format("INSERT INTO Registros VALUES "
                 + "(null, '%.1f', '%%', 'Uso da CPU', null, 1, 1);", f[0]);
 
         // Conecta no banco e passa o insert como query SQL

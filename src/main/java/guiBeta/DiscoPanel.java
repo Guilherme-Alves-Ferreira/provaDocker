@@ -131,7 +131,7 @@ public class DiscoPanel extends SuperVisorJpanel {
         long total = store.getTotalSpace();
         long utilizando = store.getUsableSpace();
         // Coloca o insert em uma String
-        String insertSql = String.format("INSERT INTO Registro VALUES "
+        String insertSql = String.format("INSERT INTO Registros VALUES "
                 + "(null, '%.1f', '%%', 'Espaço disponível em disco', null, 1, 3);",
                 (double) Math.round((total - utilizando) * 100 / total));
 
