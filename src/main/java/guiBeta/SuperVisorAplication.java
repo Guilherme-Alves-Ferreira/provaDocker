@@ -23,7 +23,6 @@ public class SuperVisorAplication {
     public static void main(String[] args) {
         SuperVisorAplication superVisor = new SuperVisorAplication();
         superVisor.init();
-        MemoriaPanel.verificarLogin();
         SwingUtilities.invokeLater(superVisor::setVisible);
     }
 

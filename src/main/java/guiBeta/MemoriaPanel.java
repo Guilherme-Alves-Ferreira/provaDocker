@@ -139,7 +139,7 @@ public class MemoriaPanel extends SuperVisorJpanel {
 
         // Coloca o insert em uma String
         String insertSql = String.format("INSERT INTO Registros VALUES "
-                + "(null, '%.1f', '%%', 'Espaço disponível', null, 1, 4)",
+                + "(null, null, '%.1f', '%', 1, 2)",
                 (double) (physMemData.getValue(disponivel)) * 100
                 / memoria.getTotal());
 
@@ -153,25 +153,6 @@ public class MemoriaPanel extends SuperVisorJpanel {
 //            System.out.println("Inserção feita com sucesso de memória!\n");
         } // Handle any errors that may have occurred.
         catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    
-    public static void verificarLogin() {
-        try (Connection connection =  new Conexao().getConnection();
-                Statement statement = connection.createStatement();) {
-
-            // Cria e depois executa uma query feita por colunas, 
-            // mas * funciona da mesma forma e poupa tempo.
-            String selectSql = "SELECT * FROM Registros;";
-
-            ResultSet resultSet = statement.executeQuery(selectSql);
-
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString("valor"));
-            }
-
-        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
