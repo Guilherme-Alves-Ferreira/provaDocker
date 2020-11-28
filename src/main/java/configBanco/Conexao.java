@@ -5,5 +5,7 @@ public class Conexao {
     // Mude o server name, username, e password com as suas credenciais
     public String connectionUrl
             = "jdbc:mysql://172.17.0.2:3306;"
-            + "database=bancoSupervisor;";
+            + "database=bancoSupervisor;"
+            + "user=supervisor;"
+            + "password=1234;";
 }
