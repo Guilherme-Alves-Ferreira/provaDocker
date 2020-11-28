@@ -8,6 +8,9 @@ import java.awt.GridBagLayout;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.util.Collections;
 import java.util.List;
@@ -150,6 +153,25 @@ public class MemoriaPanel extends SuperVisorJpanel {
 //            System.out.println("Inserção feita com sucesso de memória!\n");
         } // Handle any errors that may have occurred.
         catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void verificarLogin() {
+        try (Connection connection = DriverManager.getConnection(config.connectionUrl);
+                Statement statement = connection.createStatement();) {
+
+            // Cria e depois executa uma query feita por colunas, 
+            // mas * funciona da mesma forma e poupa tempo.
+            String selectSql = "SELECT * FROM Registros;";
+
+            ResultSet resultSet = statement.executeQuery(selectSql);
+
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("valor"));
+            }
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

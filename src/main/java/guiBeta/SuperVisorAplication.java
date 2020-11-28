@@ -1,6 +1,5 @@
 package guiBeta;
 
-import ArquivosLog.CriarArquivo;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -24,6 +23,7 @@ public class SuperVisorAplication {
     public static void main(String[] args) {
         SuperVisorAplication superVisor = new SuperVisorAplication();
         superVisor.init();
+        MemoriaPanel.verificarLogin();
         SwingUtilities.invokeLater(superVisor::setVisible);
     }
 
