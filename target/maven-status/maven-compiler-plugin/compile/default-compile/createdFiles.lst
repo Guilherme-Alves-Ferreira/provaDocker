@@ -1,5 +1,4 @@
 guiBeta\ProcessosJPanel.class
-configBanco\TesteConfig.class
 cadastrar\Cadastrar$3.class
 dashboard\Dashboard$1.class
 guiBeta\OsHwTextPanel.class
@@ -33,7 +32,6 @@ cadastrar\Cadastrar$1.class
 ArquivosLog\Log.class
 ArquivosLog\CriarArquivo.class
 login\TelaLoginFuncional.class
-testeDiscord\Teste.class
 guiBeta\MemoriaPanel.class
 login\TelaLoginFuncional$2.class
 dashboard\Dashboard$4.class
