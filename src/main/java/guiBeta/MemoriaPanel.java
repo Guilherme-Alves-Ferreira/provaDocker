@@ -11,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.text.DecimalFormat;
 import java.util.Collections;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 import javax.swing.JPanel;
 import javax.swing.JTextArea;

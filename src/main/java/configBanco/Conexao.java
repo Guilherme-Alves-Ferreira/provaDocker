@@ -6,6 +6,4 @@ public class Conexao {
     public String connectionUrl
             = "jdbc:mysql://54.84.10.225:3306;"
             + "database=bancoSupervisor;";
-    
-    
 }

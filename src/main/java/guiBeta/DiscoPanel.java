@@ -26,7 +26,6 @@ import org.jfree.data.general.DefaultPieDataset;
 
 import oshi.PlatformEnum;
 import oshi.SystemInfo;
-import oshi.hardware.GlobalMemory;
 import oshi.software.os.FileSystem;
 import oshi.software.os.OSFileStore;
 import oshi.util.FormatUtil;
