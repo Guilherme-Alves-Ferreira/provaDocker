@@ -139,7 +139,7 @@ public class MemoriaPanel extends SuperVisorJpanel {
 
         // Coloca o insert em uma String
         String insertSql = String.format("INSERT INTO Registros VALUES "
-                + "(null, null, '%.1f', '%', 1, 2)",
+                + "(null, null, '%.1f', '%', 1, 2);",
                 (double) (physMemData.getValue(disponivel)) * 100
                 / memoria.getTotal());
 
