@@ -80,7 +80,7 @@ public class MemoriaPanel extends SuperVisorJpanel {
 
         add(MemoriaPanel, BorderLayout.CENTER);
 
-        Timer timer = new Timer(Config.REFRESH_SLOW, e -> {
+        Timer timer = new Timer(5000, e -> {
             updateDatasets(memoria, memFisDados, memVirtDados);
             memFis.setSubtitles(Collections.singletonList(new TextTitle(updatePhysTitle(memoria))));
             memVirt.setSubtitles(Collections.singletonList(new TextTitle(updateVirtTitle(memoria))));

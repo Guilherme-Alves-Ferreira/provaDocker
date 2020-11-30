@@ -87,7 +87,7 @@ public class CpuPanel extends SuperVisorJpanel {
         });
         timer.start();
         
-        Timer timer2 = new Timer(Config.REFRESH_SLOW, e -> {
+        Timer timer2 = new Timer(5000, e -> {
             if (f[0] != 0) // VALOR PARA MANDAR NO BANCO
                 inserirDadosCpu(f);
         });
