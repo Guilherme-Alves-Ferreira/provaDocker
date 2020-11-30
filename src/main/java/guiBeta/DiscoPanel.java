@@ -144,7 +144,7 @@ public class DiscoPanel extends SuperVisorJpanel {
             prepsInsertProduct.execute();
 
             // Confirma a execução
-//            System.out.println("Inserção feita DISCO!\n");
+            System.out.println("Inserção feita DISCO!\n");
         } // Handle any errors that may have occurred.
         catch (Exception e) {
             e.printStackTrace();

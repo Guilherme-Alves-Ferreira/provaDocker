@@ -126,7 +126,7 @@ public class CpuPanel extends SuperVisorJpanel {
             prepsInsertProduct.execute();
 
             // Confirma a execução
-            System.out.println("Inserção feita com sucesso de cpu!\n");
+            System.out.println("Inserção feita com sucesso de cpu!");
 
         }
         catch (Exception e) {

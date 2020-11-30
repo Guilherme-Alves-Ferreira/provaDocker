@@ -147,7 +147,7 @@ public class MemoriaPanel extends SuperVisorJpanel {
             // Executa o insert
             prepsInsertProduct.execute();
 
-//            System.out.println("Inserção feita com sucesso de memória!\n");
+            System.out.println("Inserção feita com sucesso de memória!");
         } // Handle any errors that may have occurred.
         catch (Exception e) {
             e.printStackTrace();
