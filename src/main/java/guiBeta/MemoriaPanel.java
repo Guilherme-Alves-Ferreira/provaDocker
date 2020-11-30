@@ -133,12 +133,12 @@ public class MemoriaPanel extends SuperVisorJpanel {
 
     public static void inserirDadosMemFisica(GlobalMemory memoria, DefaultPieDataset physMemData) {
 
-        String valor = String.valueOf((double) (physMemData.getValue(disponivel)) * 100
-                / memoria.getTotal());
+        
+        Double valor = (double) (physMemData.getValue(disponivel)) * 100
+                / memoria.getTotal();
 
         // Coloca o insert em uma String
-        String insertSql = String.format("INSERT INTO Registros VALUES "
-                + "(null, null, '%s', '%', 1, 2);", valor);
+        String insertSql = String.format("INSERT INTO Registros VALUES (null, null, '%s', '%%', 1, 2);", valor.toString());
 
         // Conecta no banco e passa o insert como query SQL
         try (Connection connection = new Conexao().getConnection();

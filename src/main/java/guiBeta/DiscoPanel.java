@@ -131,10 +131,10 @@ public class DiscoPanel extends SuperVisorJpanel {
         long total = store.getTotalSpace();
         long utilizando = store.getUsableSpace();
         
-        String valor = String.valueOf((double) Math.round((total - utilizando) * 100 / total));
+        Double valor = (double) Math.round((total - utilizando) * 100 / total);
         // Coloca o insert em uma String
         String insertSql = String.format("INSERT INTO Registros VALUES "
-                + "(null, null, '%s', '%', 1, 3);", valor);
+                + "(null, null, '%s', '%%', 1, 3);", valor.toString());
 
         // Conecta no banco e passa o insert como query SQL
         try (Connection connection = new Conexao().getConnection();
