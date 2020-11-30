@@ -116,8 +116,7 @@ public class CpuPanel extends SuperVisorJpanel {
     public static void inserirDadosCpu(float[] f) {
 
         // Coloca o insert em uma String
-        String insertSql = String.format("INSERT INTO Registros VALUES "
-                + "(null, null, '%.1f', '%', 1, 1);", f[0]);
+        String insertSql = "INSERT INTO Registros VALUES (null, null, '12', '%', 1, 1);";
 
         // Conecta no banco e passa o insert como query SQL
         try (Connection connection = new Conexao().getConnection();
@@ -127,7 +126,7 @@ public class CpuPanel extends SuperVisorJpanel {
             prepsInsertProduct.execute();
 
             // Confirma a execução
-//            System.out.println("Inserção feita com sucesso de cpu!\n");
+            System.out.println("Inserção feita com sucesso de cpu!\n");
 
         }
         catch (Exception e) {
