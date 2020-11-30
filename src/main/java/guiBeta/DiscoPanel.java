@@ -69,7 +69,7 @@ public class DiscoPanel extends SuperVisorJpanel {
 
         add(fsPanel, BorderLayout.CENTER);
 
-        Timer timer = new Timer(Config.REFRESH_SLOWER, e -> {
+        Timer timer = new Timer(Config.REFRESH_SLOW, e -> {
             if (!updateDatasets(fs, fsData, fsCharts)) {
                 ((Timer) e.getSource()).stop();
                 fsPanel.removeAll();

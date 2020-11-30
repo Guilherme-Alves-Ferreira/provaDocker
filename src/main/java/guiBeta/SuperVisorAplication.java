@@ -47,7 +47,7 @@ public class SuperVisorAplication {
         jMenu = getJMenu("OS & HW Info", 'O', "Hardware & OS índice", new OsHwTextPanel(si));
         menuBar.add(jMenu);
         // Add later menu items in their own threads
-//        new Thread(new AddMenuBarTask("Memória", 'M', "Índice de memória", new MemoriaPanel(si))).start();
+        new Thread(new AddMenuBarTask("Memória", 'M', "Índice de memória", new MemoriaPanel(si))).start();
         new Thread(new AddMenuBarTask("CPU", 'C', "Uso da CPU", new CpuPanel(si))).start();
         new Thread(new AddMenuBarTask("Disco", 'F', "Uso de disco", new DiscoPanel(si))).start();
         new Thread(new AddMenuBarTask("Processos", 'P', "Processos", new ProcessosJPanel(si))).start();
