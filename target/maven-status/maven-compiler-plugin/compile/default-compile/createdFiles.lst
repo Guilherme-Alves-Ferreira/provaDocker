@@ -2,11 +2,9 @@ guiBeta\ProcessosJPanel.class
 cadastrar\Cadastrar$3.class
 dashboard\Dashboard$1.class
 guiBeta\OsHwTextPanel.class
-log\LogErros.class
 login\TelaLoginFuncional$3.class
 guiBeta\Config.class
 dashboard\Dashboard$6.class
-ArquivosLog\Logs.class
 guiBeta\DiscoPanel.class
 dashboard\Dashboard$3.class
 dashboard\Gerenciador.class
@@ -14,7 +12,6 @@ login\TelaLoginFuncional$1.class
 guiBeta\SuperVisorAplication$AddMenuBarTask.class
 cadastrar\Cadastrar$5.class
 cadastrar\Cadastrar$8.class
-dashboard\Dashboard$8.class
 cadastrar\Cadastrar.class
 guiBeta\CpuPanel.class
 guiBeta\SuperVisorAplication$1.class
@@ -29,8 +26,6 @@ cadastrar\Cadastrar$7.class
 dashboard\Dashboard.class
 cadastrar\Cadastrar$6.class
 cadastrar\Cadastrar$1.class
-ArquivosLog\Log.class
-ArquivosLog\CriarArquivo.class
 login\TelaLoginFuncional.class
 guiBeta\MemoriaPanel.class
 login\TelaLoginFuncional$2.class

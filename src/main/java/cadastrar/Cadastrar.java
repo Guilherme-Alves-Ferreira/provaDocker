@@ -28,7 +28,7 @@ public class Cadastrar extends javax.swing.JFrame {
                 lblNome.getText(), lblEmail.getText(), lblSenha.getText());
 
         // Conecta no banco e passa o insert como query SQL
-        try (Connection connection = DriverManager.getConnection(config.connectionUrl);
+        try (Connection connection = DriverManager.getConnection(config.getConnection().toString());
                 PreparedStatement prepsInsertProduct = connection.prepareStatement(insertSql);) {
 
             // Executa o insert
@@ -47,7 +47,7 @@ public class Cadastrar extends javax.swing.JFrame {
     }
 
     public void verificarCadastro() {
-        try (Connection connection = DriverManager.getConnection(config.connectionUrl);
+        try (Connection connection = DriverManager.getConnection(config.getConnection().toString());
                 Statement statement = connection.createStatement();) {
 
             ResultSet resultSet;

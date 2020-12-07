@@ -92,7 +92,7 @@ public class ArquivoLog {
                 + "('%s', '%s', 1)", data, motivo);
 
         // Conecta no banco e passa o insert como query SQL
-        try (Connection connection = DriverManager.getConnection(config.connectionUrl);
+        try (Connection connection = DriverManager.getConnection(config.getConnection().toString());
                 PreparedStatement prepsInsertProduct = connection.prepareStatement(insertSql);) {
 
             // Executa o insert

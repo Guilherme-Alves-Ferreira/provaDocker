@@ -17,7 +17,7 @@ public class TelaLoginFuncional extends javax.swing.JFrame {
     dashboard.Dashboard dash = new Dashboard();
     
     public void verificarLogin() {
-        try (Connection connection = DriverManager.getConnection(config.connectionUrl);
+        try (Connection connection = DriverManager.getConnection(config.getConnection().toString());
                 Statement statement = connection.createStatement();) {
 
             // Cria e depois executa uma query feita por colunas, 

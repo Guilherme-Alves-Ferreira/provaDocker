@@ -19,7 +19,7 @@ public class Gerenciador {
     
     public void recuperarDados(Integer categoria, JLabel lblLocal) {
     
-         try (Connection connection = DriverManager.getConnection(config.connectionUrl);
+         try (Connection connection = DriverManager.getConnection(config.getConnection().toString());
                 Statement statement = connection.createStatement();) {
 
             // Cria e depois executa uma query feita por colunas, 

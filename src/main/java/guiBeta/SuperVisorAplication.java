@@ -26,12 +26,12 @@ public class SuperVisorAplication {
         SwingUtilities.invokeLater(superVisor::setVisible);
     }
 
-    private void setVisible() {
+    public void setVisible() {
         mainFrame.setVisible(true);
         jMenu.doClick();
     }
 
-    private void init() {
+    public void init() {
         // Create the external frame
         mainFrame = new JFrame(Config.GUI_TITLE);
         mainFrame.setSize(Config.GUI_WIDTH, Config.GUI_HEIGHT);
