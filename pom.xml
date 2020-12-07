@@ -46,7 +46,7 @@
                         <manifest>
 
                             <mainClass>login.TelaLoginFuncional</mainClass>
-                            <mainClass>guiBeta.SuperVisorAplication</mainClass>
+<!--                            <mainClass>guiBeta.SuperVisorAplication</mainClass>-->
 
                         </manifest>
 

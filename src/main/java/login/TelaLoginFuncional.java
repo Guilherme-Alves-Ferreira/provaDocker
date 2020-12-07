@@ -1,4 +1,3 @@
-
 package login;
 
 import com.sun.java.swing.plaf.windows.WindowsBorders;
@@ -13,38 +12,36 @@ import java.sql.Statement;
 public class TelaLoginFuncional extends javax.swing.JFrame {
 
     configBanco.Conexao config = new Conexao();
-    
     dashboard.Dashboard dash = new Dashboard();
-    
-    public void verificarLogin() {
+
+    public Boolean verificarLogin() {
+        
+        String email = "", senha = "";
+        
         try (Connection connection = DriverManager.getConnection(config.getConnection().toString());
                 Statement statement = connection.createStatement();) {
 
             // Cria e depois executa uma query feita por colunas, 
             // mas * funciona da mesma forma e poupa tempo.
             String selectSql = String.format("SELECT * FROM CadastroFuncionario"
-                  + " WHERE email = '%s'and senha = '%s'", tfMail.getText(), tfSenha.getText());
+                    + " WHERE email = '%s'and senha = '%s'", tfMail.getText(), tfSenha.getText());
 
             ResultSet resultSet = statement.executeQuery(selectSql);
 
-            // Exibe o resultado do select
-            String email = "", senha = "";
-
+            // Recupera o resultado do select
             while (resultSet.next()) {
-             email = resultSet.getString("email");
-             senha = resultSet.getString("senha");
-            }
-
-            if (email.equals(tfMail.getText()) && senha.equals(tfSenha.getText())) {
-               dash.setVisible(true);
-               this.dispose();
-            } else {
-                System.out.println("Login incorreto.");
+                email = resultSet.getString("email");
+                senha = resultSet.getString("senha");
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        
+         if (email.equals(tfMail.getText()) && senha.equals(tfSenha.getText()))
+                return true;
+            else
+                return false;
     }
 
     public TelaLoginFuncional() {
@@ -272,13 +269,20 @@ public class TelaLoginFuncional extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
 
-        verificarLogin();        
+        
+        if (verificarLogin()) {
+            dash.setVisible(true);
+            System.out.println("Foi!");
+            this.dispose();
+        } else {
+            System.out.println("Login incorreto.");
+        }
+        
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void tfMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfMailActionPerformed
-
 
     public static void main(String args[]) {
         try {
