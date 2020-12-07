@@ -1,7 +1,5 @@
 package guiBeta;
 
-import configBanco.Conexao;
-import static guiBeta.MemoriaPanel.config;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -10,8 +8,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.BorderFactory;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -33,6 +34,9 @@ import oshi.util.FormatUtil;
 
 public class DiscoPanel extends SuperVisorJpanel {
 
+    static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+    static LocalDateTime now = LocalDateTime.now();
+    
     private static final long serialVersionUID = 1L;
 
     private static final String utilizando = "Utilizado";
@@ -49,6 +53,9 @@ public class DiscoPanel extends SuperVisorJpanel {
         JFreeChart[] fsCharts = new JFreeChart[fsData.length];
 
         JPanel fsPanel = new JPanel();
+        fsPanel.setBorder(BorderFactory.createTitledBorder(
+                BorderFactory.createMatteBorder(30, 30, 30, 30, Color.decode("#102842")),
+                "USO DE DISCO - SUPERVISOR"));
         fsPanel.setLayout(new GridBagLayout());
         GridBagConstraints fsConstraints = new GridBagConstraints();
         fsConstraints.weightx = 1d;
@@ -69,7 +76,7 @@ public class DiscoPanel extends SuperVisorJpanel {
 
         add(fsPanel, BorderLayout.CENTER);
 
-        Timer timer = new Timer(15000, e -> {
+        Timer timer = new Timer(Config.REFRESH_SLOWER, e -> {
             if (!updateDatasets(fs, fsData, fsCharts)) {
                 ((Timer) e.getSource()).stop();
                 fsPanel.removeAll();
@@ -129,24 +136,25 @@ public class DiscoPanel extends SuperVisorJpanel {
     public static void inserirDadosDisco(OSFileStore store) {
 
         long total = store.getTotalSpace();
-        long utilizando = store.getUsableSpace();
-        
-        Double valor = (double) Math.round((total - utilizando) * 100 / total);
+        long disponivel = store.getUsableSpace();
         // Coloca o insert em uma String
-        String insertSql = String.format("INSERT INTO Registros VALUES "
-                + "(null, null, '%s', '%%', 1, 3);", valor.toString());
+        String insertSql = String.format("INSERT INTO Registro VALUES "
+                + "('%.1f', '%%', 'Uso de disco', '%s', 1, 3)",
+                (double) Math.round((total - disponivel) * 100 / total), dtf.format(now));
 
         // Conecta no banco e passa o insert como query SQL
-        try (Connection connection = new Conexao().getConnection();
+        try (Connection connection = DriverManager.getConnection(SuperVisorAplication.config.connectionUrl);
                 PreparedStatement prepsInsertProduct = connection.prepareStatement(insertSql);) {
 
             // Executa o insert
             prepsInsertProduct.execute();
 
             // Confirma a execução
-            System.out.println("Inserção feita DISCO!\n");
+//            System.out.println("Inserção feita DISCO!\n");
         } // Handle any errors that may have occurred.
         catch (Exception e) {
+            SuperVisorAplication.arqLog.setDisco(true);
+            SuperVisorAplication.arqLog.criar();
             e.printStackTrace();
         }
     }

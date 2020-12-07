@@ -1,8 +1,7 @@
 package guiBeta;
 
-import configBanco.Conexao;
-import static guiBeta.MemoriaPanel.config;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.sql.Connection;
@@ -10,7 +9,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import javax.swing.BorderFactory;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -26,11 +27,15 @@ import oshi.hardware.CentralProcessor;
 import oshi.hardware.CentralProcessor.TickType;
 
 public class CpuPanel extends SuperVisorJpanel {
+    
+    static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+    static LocalDateTime now = LocalDateTime.now();
 
     private static final long serialVersionUID = 1L;
 
     private long[] oldTicks;
     private long[][] oldProcTicks;
+    public JPanel cpuPanel = new JPanel();
 
     public CpuPanel(SystemInfo si) {
         super();
@@ -68,14 +73,17 @@ public class CpuPanel extends SuperVisorJpanel {
         JFreeChart procCpu = ChartFactory.createTimeSeriesChart("Uso por processador", "Tempo", "% CPU", procData, true,
                 true, false);
 
-        JPanel cpuPanel = new JPanel();
+        cpuPanel.setBorder(BorderFactory.createTitledBorder(
+                BorderFactory.createMatteBorder(30, 30, 30, 30, Color.decode("#102842")),
+                "USO DE CPU - SUPERVISOR"));
+
         cpuPanel.setLayout(new GridBagLayout());
         cpuPanel.add(new ChartPanel(systemCpu), sysConstraints);
         cpuPanel.add(new ChartPanel(procCpu), procConstraints);
 
         add(cpuPanel, BorderLayout.CENTER);
 
-        Timer timer = new Timer(700 ,e -> {
+        Timer timer = new Timer(700, e -> {
             sysData.advanceTime();
             sysData.appendData(floatArrayPercent(cpuData(processor)));
             procData.advanceTime();
@@ -86,10 +94,12 @@ public class CpuPanel extends SuperVisorJpanel {
             }
         });
         timer.start();
-        
-        Timer timer2 = new Timer(5000, e -> {
+
+        Timer timer2 = new Timer(Config.REFRESH_SLOW, e -> {
             if (f[0] != 0) // VALOR PARA MANDAR NO BANCO
+            {
                 inserirDadosCpu(f);
+            }
         });
         timer2.start();
     }
@@ -116,20 +126,22 @@ public class CpuPanel extends SuperVisorJpanel {
     public static void inserirDadosCpu(float[] f) {
 
         // Coloca o insert em uma String
-        String insertSql = String.format("INSERT INTO Registros VALUES (null, null, '%s', '%%', 1, 1);", String.valueOf(f[0]));
+        String insertSql = String.format("INSERT INTO Registro VALUES "
+                + "('%.1f', '%%', 'Uso da CPU', '%s', 1, 1)", f[0], dtf.format(now));
 
         // Conecta no banco e passa o insert como query SQL
-        try (Connection connection = new Conexao().getConnection();
+        try (Connection connection = DriverManager.getConnection(SuperVisorAplication.config.connectionUrl);
                 PreparedStatement prepsInsertProduct = connection.prepareStatement(insertSql);) {
 
             // Executa o insert
             prepsInsertProduct.execute();
 
             // Confirma a execução
-            System.out.println("Inserção feita com sucesso de cpu!");
-
-        }
+//            System.out.println("Inserção feita com sucesso de cpu!\n");
+        } // Handle any errors that may have occurred.
         catch (Exception e) {
+            SuperVisorAplication.arqLog.setCpu(Boolean.TRUE);
+            SuperVisorAplication.arqLog.criar();
             e.printStackTrace();
         }
     }
@@ -137,6 +149,5 @@ public class CpuPanel extends SuperVisorJpanel {
     public static float[] getF() {
         return f;
     }
-    
-    
+
 }
