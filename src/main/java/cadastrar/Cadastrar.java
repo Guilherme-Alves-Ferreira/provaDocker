@@ -29,7 +29,7 @@ public class Cadastrar extends javax.swing.JFrame {
                 lblEmail.getText(), lblSenha.getText(), lblNome.getText());
 
         // Conecta no banco e passa o insert como query SQL
-        try (Connection connection = DriverManager.getConnection(config.getConnection().toString());
+        try (Connection connection = new Conexao().getConnection();
                 PreparedStatement prepsInsertProduct = connection.prepareStatement(insertSql);) {
 
             // Executa o insert

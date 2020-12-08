@@ -4,7 +4,6 @@ import cadastrar.Cadastrar;
 import configBanco.Conexao;
 import dashboard.Dashboard;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,7 +14,7 @@ public class TelaLoginFuncional extends javax.swing.JFrame {
     Dashboard dash = new Dashboard();
 
     public void verificarLogin() {
-        try (Connection connection = DriverManager.getConnection(config.getConnection().toString());
+        try (Connection connection = new Conexao().getConnection();
                 Statement statement = connection.createStatement();) {
 
             // Cria e depois executa uma query feita por colunas, 
