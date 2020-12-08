@@ -20,7 +20,7 @@ public class TelaLoginFuncional extends javax.swing.JFrame {
 
             // Cria e depois executa uma query feita por colunas, 
             // mas * funciona da mesma forma e poupa tempo.
-            String selectSql = String.format("SELECT * FROM CadastroFuncionario"
+            String selectSql = String.format("SELECT * FROM CAdastroFuncionario"
                     + " WHERE email = '%s'and senha = '%s'", tfMail.getText(), tfSenha.getText());
 
             ResultSet resultSet = statement.executeQuery(selectSql);

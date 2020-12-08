@@ -23,10 +23,10 @@ public class Cadastrar extends javax.swing.JFrame {
     
     public void cadastrarUsuario() {
         // Coloca o insert em uma String
-        String insertSql = String.format("INSERT INTO CadastroFuncionario "
-                + "(nomeFuncionario, email, senha, fkFaculdade) "
-                + "VALUES ('%s', '%s', '%s', null)",
-                lblNome.getText(), lblEmail.getText(), lblSenha.getText());
+        String insertSql = String.format("INSERT INTO CAdastroFuncionario "
+                + "(email, senha, fkFaculdade, nomeFuncionario) "
+                + "VALUES (null, '%s', '%s', 1, '%s')",
+                lblEmail.getText(), lblSenha.getText(), lblNome.getText());
 
         // Conecta no banco e passa o insert como query SQL
         try (Connection connection = DriverManager.getConnection(config.getConnection().toString());
