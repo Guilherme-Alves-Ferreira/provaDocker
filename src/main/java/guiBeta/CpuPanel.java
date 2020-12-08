@@ -3,6 +3,7 @@ package guiBeta;
 import configBanco.Conexao;
 import static guiBeta.MemoriaPanel.config;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.sql.Connection;
@@ -10,7 +11,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import javax.swing.BorderFactory;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -26,6 +29,10 @@ import oshi.hardware.CentralProcessor;
 import oshi.hardware.CentralProcessor.TickType;
 
 public class CpuPanel extends SuperVisorJpanel {
+    
+    static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+    static LocalDateTime now = LocalDateTime.now();
+
 
     private static final long serialVersionUID = 1L;
 
@@ -69,6 +76,10 @@ public class CpuPanel extends SuperVisorJpanel {
                 true, false);
 
         JPanel cpuPanel = new JPanel();
+        cpuPanel.setBorder(BorderFactory.createTitledBorder(
+                BorderFactory.createMatteBorder(30, 30, 30, 30, Color.decode("#102842")),
+                "USO DE CPU - SUPERVISOR"));
+        
         cpuPanel.setLayout(new GridBagLayout());
         cpuPanel.add(new ChartPanel(systemCpu), sysConstraints);
         cpuPanel.add(new ChartPanel(procCpu), procConstraints);
@@ -116,7 +127,8 @@ public class CpuPanel extends SuperVisorJpanel {
     public static void inserirDadosCpu(float[] f) {
 
         // Coloca o insert em uma String
-        String insertSql = String.format("INSERT INTO Registros VALUES (null, null, '%s', '%%', 1, 1);", String.valueOf(f[0]));
+        String insertSql = String.format("INSERT INTO Registros VALUES (null, '%s', '%.0f', '%%', 1, 1);", 
+                dtf.format(now), f[0]);
 
         // Conecta no banco e passa o insert como query SQL
         try (Connection connection = new Conexao().getConnection();

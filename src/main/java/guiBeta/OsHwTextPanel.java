@@ -15,6 +15,8 @@ import javax.swing.Timer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.awt.Color;
+import javax.swing.BorderFactory;
 
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
@@ -71,6 +73,9 @@ public class OsHwTextPanel extends SuperVisorJpanel { // NOSONAR squid:S110
         csConstraints.fill = GridBagConstraints.BOTH;
 
         JPanel oshwPanel = new JPanel();
+        oshwPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        
+        oshwPanel.setBackground(Color.decode("#102842"));
         oshwPanel.setLayout(new GridBagLayout());
 
         JTextArea osArea = new JTextArea(0, 0);

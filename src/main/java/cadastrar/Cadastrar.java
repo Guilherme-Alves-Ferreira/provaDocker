@@ -16,7 +16,8 @@ import login.TelaLoginFuncional;
 public class Cadastrar extends javax.swing.JFrame {
 
     Conexao config = new Conexao();
-
+    
+    TelaLoginFuncional login = new TelaLoginFuncional();
     
     TelaLoginFuncional linkLogin = new TelaLoginFuncional();
     
@@ -36,6 +37,8 @@ public class Cadastrar extends javax.swing.JFrame {
 
             // Confirma a execução
             System.out.println("Inserção feita com sucesso!\n");
+            login.setVisible(true);
+            this.dispose();
 
         } // Handle any errors that may have occurred.
         catch (Exception e) {
@@ -398,12 +401,6 @@ public class Cadastrar extends javax.swing.JFrame {
     }//GEN-LAST:event_lblEmailActionPerformed
 
     private void bntCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadastrarActionPerformed
-
-//        Pattern criterios = Pattern.compile(".+@.+\\.[a-z]+");
-//        Matcher achar = criterios.matcher(lblEmail.getText().trim());
-
-//        boolean matchFound = achar.matches();
-
         String senha = lblSenha.getText();
         String email = lblEmail.getText();
 
@@ -434,9 +431,7 @@ public class Cadastrar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lblNomeActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

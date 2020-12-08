@@ -8,8 +8,11 @@ import java.awt.GridBagLayout;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 import java.util.List;
+import javax.swing.BorderFactory;
 
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -30,6 +33,9 @@ import oshi.hardware.PhysicalMemory;
 import oshi.hardware.VirtualMemory;
 
 public class MemoriaPanel extends SuperVisorJpanel {
+    
+    static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+    static LocalDateTime now = LocalDateTime.now();
 
     static Conexao config = new Conexao();
 
@@ -70,6 +76,9 @@ public class MemoriaPanel extends SuperVisorJpanel {
         textConstraints.fill = GridBagConstraints.BOTH;
 
         JPanel MemoriaPanel = new JPanel();
+        MemoriaPanel.setBorder(BorderFactory.createTitledBorder(
+                BorderFactory.createMatteBorder(30, 30, 30, 30, Color.decode("#102842")),
+                "USO DE MEMÓRIA RAM - SUPERVISOR"));
         MemoriaPanel.setLayout(new GridBagLayout());
         MemoriaPanel.add(new ChartPanel(memFis), pmConstraints);
         MemoriaPanel.add(new ChartPanel(memVirt), vmConstraints);
@@ -138,7 +147,9 @@ public class MemoriaPanel extends SuperVisorJpanel {
                 / memoria.getTotal();
 
         // Coloca o insert em uma String
-        String insertSql = String.format("INSERT INTO Registros VALUES (null, null, '%s', '%%', 1, 2);", valor.toString());
+        String insertSql = String.format("INSERT INTO Registros VALUES (null, '%s', '%.0f', '%%', 1, 2);", 
+                dtf.format(now),
+                valor);
 
         // Conecta no banco e passa o insert como query SQL
         try (Connection connection = new Conexao().getConnection();
