@@ -25,7 +25,7 @@ public class Cadastrar extends javax.swing.JFrame {
         // Coloca o insert em uma String
         String insertSql = String.format("INSERT INTO CAdastroFuncionario "
                 + "(email, senha, fkFaculdade, nomeFuncionario) "
-                + "VALUES (null, '%s', '%s', 1, '%s')",
+                + "VALUES ('%s', '%s', 1, '%s')",
                 lblEmail.getText(), lblSenha.getText(), lblNome.getText());
 
         // Conecta no banco e passa o insert como query SQL
