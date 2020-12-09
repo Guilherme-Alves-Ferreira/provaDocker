@@ -1,16 +1,10 @@
 package cadastrar;
 
 import java.awt.Color;
-//import java.util.regex.Matcher;
-//import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import configBanco.Conexao;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import login.TelaLoginFuncional;
 
 public class Cadastrar extends javax.swing.JFrame {
@@ -49,7 +43,6 @@ public class Cadastrar extends javax.swing.JFrame {
 
     public Cadastrar() {
         initComponents();
-
     }
 
     @SuppressWarnings("unchecked")
@@ -83,9 +76,9 @@ public class Cadastrar extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(16, 40, 66));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\guilh\\OneDrive\\Documentos\\grupo-05-adsa-20201\\projetoSupervisor\\src\\main\\java\\imagem\\logo3.1.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\guilh\\OneDrive\\Área de Trabalho\\provaDocker\\src\\main\\java\\cadastrar\\logo3.1.png")); // NOI18N
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\guilh\\OneDrive\\Documentos\\grupo-05-adsa-20201\\projetoSupervisor\\src\\main\\java\\imagem\\LogoSpervisor.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\guilh\\OneDrive\\Área de Trabalho\\provaDocker\\src\\main\\java\\cadastrar\\LogoSpervisor.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,18 +105,18 @@ public class Cadastrar extends javax.swing.JFrame {
 
         jPanel3.setBackground(java.awt.Color.white);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 102, 51));
-        jLabel6.setText("Informações Pessoais");
+        jLabel6.setText("INFORMAÇÕES PESSOAIS");
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel1.setText("Nome completo:");
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel1.setText("NOME COMPLETO");
 
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel8.setText("Usuário");
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel8.setText("USUÁRIO");
 
-        lblNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblNome.setForeground(new java.awt.Color(204, 204, 204));
+        lblNome.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblNome.setForeground(new java.awt.Color(153, 153, 153));
         lblNome.setText("Ex: João da Silva");
         lblNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,35 +124,35 @@ public class Cadastrar extends javax.swing.JFrame {
             }
         });
 
-        lblDataNasc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblDataNasc.setForeground(new java.awt.Color(204, 204, 204));
-        lblDataNasc.setText("dd/mm/aaa");
+        lblDataNasc.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblDataNasc.setForeground(new java.awt.Color(153, 153, 153));
+        lblDataNasc.setText("EX: jhon");
         lblDataNasc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lblDataNascActionPerformed(evt);
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 102, 51));
-        jLabel9.setText("Informações de Conta ");
+        jLabel9.setText("INFORMAÇÕES DA CONTA");
 
         jLabel11.setText("______________________________________________________________________________________________________________________________");
 
-        jLabel12.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel12.setText("E-mail");
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel12.setText("E-MAIL");
 
-        jLabel13.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel13.setText("Confirmar E-mail");
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel13.setText("CONFIRMAR E-MAIL");
 
-        jLabel14.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel14.setText("Senha:");
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel14.setText("SENHA");
 
-        jLabel15.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel15.setText("Confirmar senha:");
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel15.setText("CONFIRMAR SENHA");
 
-        bntCadastrar.setBackground(new java.awt.Color(255, 255, 255));
-        bntCadastrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bntCadastrar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        bntCadastrar.setForeground(new java.awt.Color(51, 51, 51));
         bntCadastrar.setText("CADASTRAR");
         bntCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,8 +160,8 @@ public class Cadastrar extends javax.swing.JFrame {
             }
         });
 
-        lblEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblEmail.setForeground(new java.awt.Color(204, 204, 204));
+        lblEmail.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(153, 153, 153));
         lblEmail.setText("exemplo@supervisor.com");
         lblEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,8 +169,8 @@ public class Cadastrar extends javax.swing.JFrame {
             }
         });
 
-        lblConfiSenha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblConfiSenha.setForeground(new java.awt.Color(204, 204, 204));
+        lblConfiSenha.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblConfiSenha.setForeground(new java.awt.Color(153, 153, 153));
         lblConfiSenha.setText("#minhasenha123");
         lblConfiSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,8 +178,8 @@ public class Cadastrar extends javax.swing.JFrame {
             }
         });
 
-        lblConfiEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblConfiEmail.setForeground(new java.awt.Color(204, 204, 204));
+        lblConfiEmail.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblConfiEmail.setForeground(new java.awt.Color(153, 153, 153));
         lblConfiEmail.setText("exemplo@supervisor.com");
         lblConfiEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,8 +187,8 @@ public class Cadastrar extends javax.swing.JFrame {
             }
         });
 
-        lblSenha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblSenha.setForeground(new java.awt.Color(204, 204, 204));
+        lblSenha.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblSenha.setForeground(new java.awt.Color(153, 153, 153));
         lblSenha.setText("#minhasenha123");
         lblSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,9 +196,9 @@ public class Cadastrar extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\guilh\\OneDrive\\Documentos\\grupo-05-adsa-20201\\projetoSupervisor\\src\\main\\java\\imagem\\dev-computer.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\guilh\\OneDrive\\Área de Trabalho\\provaDocker\\src\\main\\java\\cadastrar\\dev-computer.png")); // NOI18N
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\guilh\\OneDrive\\Documentos\\grupo-05-adsa-20201\\projetoSupervisor\\src\\main\\java\\imagem\\computador.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\guilh\\OneDrive\\Área de Trabalho\\provaDocker\\src\\main\\java\\cadastrar\\computador.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -238,9 +231,10 @@ public class Cadastrar extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel1)
                             .addComponent(jLabel8)
-                            .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(lblDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)))))
+                .addContainerGap(41, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,8 +242,8 @@ public class Cadastrar extends javax.swing.JFrame {
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 769, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(bntCadastrar)
-                        .addGap(124, 124, 124))))
+                        .addComponent(bntCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(170, 170, 170))))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(16, 16, 16)
@@ -276,9 +270,9 @@ public class Cadastrar extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addGap(22, 22, 22)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
-                            .addComponent(jLabel13))
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblConfiEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -290,11 +284,11 @@ public class Cadastrar extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblConfiSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43)
-                        .addComponent(bntCadastrar))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                            .addComponent(lblConfiSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bntCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(16, 16, 16)
@@ -323,12 +317,6 @@ public class Cadastrar extends javax.swing.JFrame {
     private void lblNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lblNomeActionPerformed
-
-    private void lblDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblDataNascActionPerformed
-        bntCadastrar.setContentAreaFilled(false);
-        bntCadastrar.setOpaque(true);
-        bntCadastrar.setBackground(Color.RED);
-    }//GEN-LAST:event_lblDataNascActionPerformed
 
     private void bntCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadastrarActionPerformed
         String senha = lblSenha.getText();
@@ -366,13 +354,14 @@ public class Cadastrar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lblSenhaActionPerformed
 
+    private void lblDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblDataNascActionPerformed
+        bntCadastrar.setContentAreaFilled(false);
+        bntCadastrar.setOpaque(true);
+        bntCadastrar.setBackground(Color.RED);
+    }//GEN-LAST:event_lblDataNascActionPerformed
+
     
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

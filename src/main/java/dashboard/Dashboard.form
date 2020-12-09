@@ -461,7 +461,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\guilh\OneDrive\Documentos\grupo-05-adsa-20201\projetoSupervisor\src\main\java\imagem\LogoSpervisor.png"/>
+              <Image iconType="2" name="C:\Users\guilh\OneDrive\&#xc1;rea de Trabalho\provaDocker\src\main\java\dashboard\LogoSpervisor.png"/>
             </Property>
           </Properties>
         </Component>
@@ -481,7 +481,7 @@
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\guilh\OneDrive\Documentos\grupo-05-adsa-20201\projetoSupervisor\src\main\java\imagem\logo3.1.png"/>
+              <Image iconType="2" name="C:\Users\guilh\OneDrive\&#xc1;rea de Trabalho\provaDocker\src\main\java\dashboard\logo3.1.png"/>
             </Property>
           </Properties>
         </Component>

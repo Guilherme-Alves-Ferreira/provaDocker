@@ -76,14 +76,14 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\guilh\OneDrive\Documentos\grupo-05-adsa-20201\projetoSupervisor\src\main\java\imagem\logo3.1.png"/>
+              <Image iconType="2" name="C:\Users\guilh\OneDrive\&#xc1;rea de Trabalho\provaDocker\src\main\java\cadastrar\logo3.1.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\guilh\OneDrive\Documentos\grupo-05-adsa-20201\projetoSupervisor\src\main\java\imagem\LogoSpervisor.png"/>
+              <Image iconType="2" name="C:\Users\guilh\OneDrive\&#xc1;rea de Trabalho\provaDocker\src\main\java\cadastrar\LogoSpervisor.png"/>
             </Property>
           </Properties>
         </Component>
@@ -132,12 +132,14 @@
                               <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblNome" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
-                              <Component id="lblDataNasc" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="lblDataNasc" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lblNome" alignment="0" pref="196" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="41" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
@@ -147,8 +149,8 @@
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="bntCadastrar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="bntCadastrar" min="-2" pref="149" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -178,12 +180,12 @@
                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel13" min="-2" pref="19" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -200,12 +202,12 @@
                               <Component id="lblSenha" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblConfiSenha" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Component id="bntCadastrar" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jLabel4" alignment="0" min="-2" pref="256" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="bntCadastrar" min="-2" pref="42" max="-2" attributes="0"/>
+                  <EmptySpace pref="48" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -221,37 +223,37 @@
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="24" style="0"/>
+              <Font name="Arial" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="66" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es Pessoais"/>
+            <Property name="text" type="java.lang.String" value="INFORMA&#xc7;&#xd5;ES PESSOAIS"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="18" style="0"/>
+              <Font name="Arial" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nome completo:"/>
+            <Property name="text" type="java.lang.String" value="NOME COMPLETO"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="18" style="0"/>
+              <Font name="Arial" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
+            <Property name="text" type="java.lang.String" value="USU&#xc1;RIO"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="lblNome">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="0"/>
+              <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ex: Jo&#xe3;o da Silva"/>
           </Properties>
@@ -262,12 +264,12 @@
         <Component class="javax.swing.JTextField" name="lblDataNasc">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="0"/>
+              <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="dd/mm/aaa"/>
+            <Property name="text" type="java.lang.String" value="EX: jhon"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lblDataNascActionPerformed"/>
@@ -276,12 +278,12 @@
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="24" style="0"/>
+              <Font name="Arial" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="66" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es de Conta "/>
+            <Property name="text" type="java.lang.String" value="INFORMA&#xc7;&#xd5;ES DA CONTA"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
@@ -292,42 +294,42 @@
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="18" style="0"/>
+              <Font name="Arial" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="E-mail"/>
+            <Property name="text" type="java.lang.String" value="E-MAIL"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="18" style="0"/>
+              <Font name="Arial" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Confirmar E-mail"/>
+            <Property name="text" type="java.lang.String" value="CONFIRMAR E-MAIL"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel14">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="18" style="0"/>
+              <Font name="Arial" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Senha:"/>
+            <Property name="text" type="java.lang.String" value="SENHA"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="18" style="0"/>
+              <Font name="Arial" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Confirmar senha:"/>
+            <Property name="text" type="java.lang.String" value="CONFIRMAR SENHA"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JToggleButton" name="bntCadastrar">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="1"/>
+              <Font name="Arial" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="CADASTRAR"/>
           </Properties>
@@ -338,10 +340,10 @@
         <Component class="javax.swing.JTextField" name="lblEmail">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="0"/>
+              <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="exemplo@supervisor.com"/>
           </Properties>
@@ -352,10 +354,10 @@
         <Component class="javax.swing.JTextField" name="lblConfiSenha">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="0"/>
+              <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="#minhasenha123"/>
           </Properties>
@@ -366,10 +368,10 @@
         <Component class="javax.swing.JTextField" name="lblConfiEmail">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="0"/>
+              <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="exemplo@supervisor.com"/>
           </Properties>
@@ -380,10 +382,10 @@
         <Component class="javax.swing.JTextField" name="lblSenha">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="0"/>
+              <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="#minhasenha123"/>
           </Properties>
@@ -394,14 +396,14 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\guilh\OneDrive\Documentos\grupo-05-adsa-20201\projetoSupervisor\src\main\java\imagem\dev-computer.png"/>
+              <Image iconType="2" name="C:\Users\guilh\OneDrive\&#xc1;rea de Trabalho\provaDocker\src\main\java\cadastrar\dev-computer.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\guilh\OneDrive\Documentos\grupo-05-adsa-20201\projetoSupervisor\src\main\java\imagem\computador.png"/>
+              <Image iconType="2" name="C:\Users\guilh\OneDrive\&#xc1;rea de Trabalho\provaDocker\src\main\java\cadastrar\computador.png"/>
             </Property>
           </Properties>
         </Component>
