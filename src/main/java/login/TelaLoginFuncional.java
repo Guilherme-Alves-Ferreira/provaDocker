@@ -79,7 +79,7 @@ public class TelaLoginFuncional extends javax.swing.JFrame {
         jLabel14.setText("jLabel14");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(815, 500));
+        setMinimumSize(new java.awt.Dimension(825, 500));
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(637, 41, 0, 0);
