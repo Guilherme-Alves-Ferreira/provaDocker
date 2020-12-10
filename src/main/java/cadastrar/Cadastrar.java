@@ -77,6 +77,7 @@ public class Cadastrar extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\guilh\\OneDrive\\Documentos\\grupo-05-adsa-20201\\projetoSupervisor\\src\\main\\java\\imagem\\dev-computer.png")); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(920, 730));
 
         jPanel1.setBackground(new java.awt.Color(16, 40, 66));
 
